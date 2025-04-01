@@ -1,0 +1,56 @@
+package dao;
+
+import model.Pedido;
+import model.Servicio;
+import model.Reparacion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import util.ConexionDB;
+
+public class TallerDAO {
+
+    public static void agregarPedido(Pedido pedido) {
+        String sql = "INSERT INTO pedidos (producto, proveedor, cantidad, precio, fecha_pedido) VALUES (?, ?, ?, ?, ?)";
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, pedido.getProducto().getId());
+            stmt.setInt(2, pedido.getProveedor().getId());
+            stmt.setInt(3, pedido.getCantidad());
+            stmt.setDouble(4, pedido.getPrecio());
+            stmt.setDate(5, java.sql.Date.valueOf(pedido.getFechaPedido()));
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void agregarServicio(Servicio servicio) {
+        String sql = "INSERT INTO servicios (nombre, descripcion, precio) VALUES (?, ?, ?)";
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, servicio.getNombre());
+            stmt.setString(2, servicio.getDescripción());
+            stmt.setDouble(3, servicio.getPrecio());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void agregarReparacion(Reparacion reparacion) {
+        String sql = "INSERT INTO reparaciones (cliente_id, vehiculo_id, empleado_id, fecha_entrada, fecha_salida, precio_total) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection conn = ConexionDB.obtenerConexion();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, reparacion.getCliente().getId());
+            stmt.setInt(2, reparacion.getVehiculo().getId());
+            stmt.setInt(3, reparacion.getEmpleado().getId());
+            stmt.setDate(4, java.sql.Date.valueOf(reparacion.getFechaEntrada()));
+            stmt.setDate(5, java.sql.Date.valueOf(reparacion.getFechaSalida()));
+            stmt.setDouble(6, reparacion.getPreciototal());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
