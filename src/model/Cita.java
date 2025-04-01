@@ -41,7 +41,7 @@ public LocalDateTime getFecha() {
 public void setFecha(LocalDateTime fecha) {
 	this.fecha = fecha;
 }
-@Override
+
 public String toString() {
 	return "Cita [id=" + id + ", cliente=" + cliente + ", vehiculo=" + vehiculo + ", fecha=" + fecha + "]";
 }
