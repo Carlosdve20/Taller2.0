@@ -1,68 +1,39 @@
 package model;
 
 public class Vehiculo {
-    private String matricula;
-    private String marca;
-    private String modelo;
+private String matricula;
+private String marca ;
+private String modelo;
+public Vehiculo() {
 
-    public Vehiculo() {
-    }
+}
+public Vehiculo(String matricula, String marca, String modelo) {
 
-    
-    public Vehiculo(String matricula, String marca, String modelo) {
-        this.matricula = matricula;
-        this.marca = marca;
-        this.modelo = modelo;
-    }
+	this.matricula = matricula;
+	this.marca = marca;
+	this.modelo = modelo;
+}
+public String getMatricula() {
+	return matricula;
+}
+public void setMatricula(String matricula) {
+	this.matricula = matricula;
+}
+public String getMarca() {
+	return marca;
+}
+public void setMarca(String marca) {
+	this.marca = marca;
+}
+public String getModelo() {
+	return modelo;
+}
+public void setModelo(String modelo) {
+	this.modelo = modelo;
+}
+@Override
+public String toString() {
+	return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + "]";
+}
 
-   
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    
-    public void arrancar() {
-        System.out.println("El vehículo con matrícula " + matricula + " ha arrancado.");
-    }
-
-   
-    public void detener() {
-        System.out.println("El vehículo con matrícula " + matricula + " se ha detenido.");
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Vehiculo vehiculo = (Vehiculo) obj;
-        return matricula != null && matricula.equals(vehiculo.matricula);
-    }
-
-    public int hashCode() {
-        return matricula != null ? matricula.hashCode() : 0;
-    }
-
-    
-    public String toString() {
-        return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + "]";
-    }
 }
