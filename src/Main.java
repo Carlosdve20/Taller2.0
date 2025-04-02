@@ -1,5 +1,5 @@
 
-import dao.PedidoDao;
+import dao.PedidoDAO;
 import dao.ClienteDAO;
 import java.util.Scanner;
 import model.Cliente;
@@ -127,20 +127,19 @@ public class Main {
 		System.out.println("");
 	}
 	private static void registrarPedido(Scanner sc) {
-		System.out.println("Introduce producto:");
-		String nombre=sc.nextLine();
+		String producto=sc.nextLine();
+		System.out.println("Introduce producto");
+		String proveedor=sc.nextLine();
 		System.out.println("Introduce proveedor");
-		String apellido=sc.nextLine();
+		String cantidad=sc.nextLine();
 		System.out.println("Introduce cantidad");
-		String dni=sc.nextLine();
-		System.out.println("Introduce precio");
-		String telefono=sc.nextLine();
-		System.out.println("Introduce la fecha_pedido");
-		String correo=sc.nextLine();
-		   // Crear un cliente nuevo
-		   Pedido nuevopedido = new Pedido(producto, proveedor, cantidad, precio,fecha_pedido);
-			        // Insertar el cliente en la BD
-		        PedidoDAO.agregarPedido(nuevopedido);
+		String precio=sc.nextLine();
+		System.out.println("Introduce la precio");
+		String fecha_pedido=sc.nextLine();
+		System.out.println("Introduce la fecha");  
+		   Pedido nuevoPedido = new Pedido(producto, proveedor, cantidad, precio,fecha_pedido);
+			        
+		        PedidoDAO.agregarPedido(nuevoPedido);
 	}        
 
 }

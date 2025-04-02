@@ -103,5 +103,10 @@ public class ClienteDAO {
             
         }
     }
+
+    public static Cliente obtenerClientePorId(int int1) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerClientePorId'");
+    }
 }
 
