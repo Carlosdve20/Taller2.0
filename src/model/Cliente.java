@@ -1,10 +1,5 @@
 package model;
 
-import dao.ConexionBD;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class Cliente {
 private int id;
@@ -87,29 +82,5 @@ public String toString() {
 }
 
 
- public static Cliente obtenerClientePorId(int id) {
-        Connection conexion = ConexionBD.conectar();
-        if (conexion != null) {
-            String query = "SELECT * FROM Cliente WHERE id = ?";
-            try (PreparedStatement stmt = conexion.prepareStatement(query);) {
-                stmt.setInt(1, id);
-                try (ResultSet rs = stmt.executeQuery()) {
-                    if (rs.next()) {
-                        return new Cliente(
-                                rs.getInt("id"),
-                                rs.getString("nombre"),
-                                rs.getString("apellido"),
-                                rs.getString("dni"),
-                                rs.getString("telefono"),
-                                rs.getString("correo"),
-                                rs.getString("direccion")
-                        );
-                    }
-                }
-            } catch (SQLException e) {
-                System.out.println("Error al obtener cliente: " + e.getMessage());
-            }
-        }
-        return null;
-    }
+ 
 }
