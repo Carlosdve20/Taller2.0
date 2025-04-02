@@ -9,6 +9,7 @@ import model.Cliente;
 public class ClienteDAO {
     
     // MÉTODO PARA INSERTAR CLIENTE
+  
     public static void agregarCliente(Cliente cliente) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
