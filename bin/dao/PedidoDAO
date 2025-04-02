@@ -1,0 +1,25 @@
+package dao;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import model.Pedido;
+
+public class PedidoDAO{
+
+    public class TallerDAO {
+
+        public static void agregarPedido(Pedido pedido) {
+            String sql = "INSERT INTO pedidos (producto, proveedor, cantidad, precio, fecha_pedido) VALUES (?, ?, ?, ?, ?)";
+            try (Connection conn = ConexionBD.obtenerConexion();
+                 PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setInt(1, pedido.getProducto().getId());
+                stmt.setInt(2, pedido.getProveedor().getId());
+                stmt.setInt(3, pedido.getCantidad());
+                stmt.setDouble(4, pedido.getPrecio());
+                stmt.setDate(5, java.sql.Date.valueOf(pedido.getFechaPedido()));
+                stmt.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+}

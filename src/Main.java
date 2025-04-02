@@ -37,7 +37,7 @@ public class Main {
 					registraCliente(sc);
                     break;
                 case 2:
-                   
+					registrarReparacion(sc);
                     break;
                 case 3:
                     System.out.println("Revisando Inventario...");
@@ -122,6 +122,9 @@ public class Main {
 		        ClienteDAO.agregarCliente(nuevoCliente);
 	}
 	
+	private static void registrarReparacion(Scanner sc){
+		System.out.println("");
+	}
 	}        
 
 

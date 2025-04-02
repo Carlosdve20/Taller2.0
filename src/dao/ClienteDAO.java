@@ -99,6 +99,7 @@ public class ClienteDAO {
             } catch (SQLException e) {
                 System.out.println("Error al eliminar cliente: " + e.getMessage());
             }
+            
         }
     }
 }
