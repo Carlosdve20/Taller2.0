@@ -1,5 +1,7 @@
+.env
 .metadata
 bin/
+*.class
 tmp/
 *.tmp
 *.log
@@ -9,3 +11,4 @@ tmp/
 .project
 .settings/
 .classpath
+.vscode/
