@@ -167,8 +167,8 @@ public class Main {
         System.out.println("Gestión de Inventario:");
         System.out.println("1. Registrar nuevo producto");
         System.out.println("2. Modificar producto");
-        System.out.println("3. Eliminar producto");
-        System.out.println("4. ver inventario");
+        System.out.println("3. ver inventario");
+        System.out.println("4. Eliminar producto");
         System.out.print("Seleccione una opción: ");
         int opcion = sc.nextInt();
         sc.nextLine();
@@ -200,6 +200,11 @@ public class Main {
                 System.out.println("Producto modificado correctamente.");
                 }
             case 3 -> {
+                List<Inventario> inventario = InventarioDAO.obtenerInventario();
+                inventario.forEach(System.out::println);
+                }
+                
+            case 4 -> {
                 System.out.println("Introduce ID del producto a eliminar:");
                 int idEliminar = sc.nextInt();
                 sc.nextLine();
