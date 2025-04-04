@@ -11,7 +11,8 @@
     import model.Cliente;
     import model.Inventario;
     import model.Vehiculo;
-
+    import view.ClienteView;
+    
     public class Main {
 
         public static void main(String[] args) {
