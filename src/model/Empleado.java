@@ -10,61 +10,71 @@ private double salario;
 public Empleado() {
 	
 }
-public Empleado( String nombre, String apellido,String dni, String puesto, double salario) {
-	
-	
-	this.nombre = nombre;
-	this.apellido = apellido;
-	this.dni = dni;
-	this.puesto = puesto;
-	this.salario = salario;
-}
 
- public Empleado(String apellido, String dni, int id, String nombre, String puesto, double salario) {
+    public Empleado(String apellido, String dni, String nombre, String puesto, double salario) {
+        this.apellido = apellido;
+        this.dni = dni;
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.salario = salario;
+    }
+
+    public Empleado(String apellido, String dni, int id, String nombre, String puesto, double salario) {
         this.apellido = apellido;
         this.dni = dni;
         this.id = id;
         this.nombre = nombre;
         this.puesto = puesto;
         this.salario = salario;
- }
+    }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
-public String getdni() {
-	return dni;
-}
-public void setdni(String dni) {
-	this.dni = dni;
-}
-public String getNombre() {
-	return nombre;
-}
-public void setNombre(String nombre) {
-	this.nombre = nombre;
-}
-public String getApellido() {
-	return apellido;
-}
-public void setApellido(String apellido) {
-	this.apellido = apellido;
-}
-public String getPuesto() {
-	return puesto;
-}
-public void setPuesto(String puesto) {
-	this.puesto = puesto;
-}
-public double getSalario() {
-	return salario;
-}
-public void setSalario(double salario) {
-	this.salario = salario;
-}
-@Override
-public String toString() {
-	return "Empleado [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", puesto=" + puesto + ", salario="
-			+ salario + "]";
-}
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
 
 }

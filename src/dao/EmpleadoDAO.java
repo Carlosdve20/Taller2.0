@@ -6,17 +6,18 @@ import java.util.List;
 import model.Empleado;
 
 public class EmpleadoDAO {
-    
-     // Método para insertar un empleado
-     public static void agregarEmpleado(Empleado empleado) {
+
+    // Método para insertar un empleado
+    public static void agregarEmpleado(Empleado empleado) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            String query = "INSERT INTO Empleado (nombre, apellido, puesto, salario) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO Empleado (nombre, apellido, dni, puesto, salario) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement stmt = conexion.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
                 stmt.setString(1, empleado.getNombre());
                 stmt.setString(2, empleado.getApellido());
-                stmt.setString(3, empleado.getPuesto());
-                stmt.setDouble(4, empleado.getSalario());
+                stmt.setString(3, empleado.getDni());
+                stmt.setString(4, empleado.getPuesto());
+                stmt.setDouble(5, empleado.getSalario());
 
                 int filasInsertadas = stmt.executeUpdate();
                 if (filasInsertadas > 0) {
@@ -37,14 +38,14 @@ public class EmpleadoDAO {
         List<Empleado> listaEmpleados = new ArrayList<>();
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            String query = "SELECT * FROM Empleado";
+            String query = "SELECT id, nombre, apellido, dni, puesto, salario FROM Empleado";
             try (Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
                 while (rs.next()) {
                     Empleado empleado = new Empleado(
                             rs.getInt("id"),
                             rs.getString("nombre"),
                             rs.getString("apellido"),
-                            
+                            rs.getString("dni"),
                             rs.getString("puesto"),
                             rs.getDouble("salario")
                     );
@@ -61,13 +62,14 @@ public class EmpleadoDAO {
     public static void actualizarEmpleado(Empleado empleado) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            String query = "UPDATE Empleado SET nombre = ?, apellido = ?, puesto = ?, salario = ? WHERE id = ?";
+            String query = "UPDATE Empleado SET nombre = ?, apellido = ?, dni = ?, puesto = ?, salario = ? WHERE id = ?";
             try (PreparedStatement stmt = conexion.prepareStatement(query)) {
                 stmt.setString(1, empleado.getNombre());
                 stmt.setString(2, empleado.getApellido());
-                stmt.setString(3, empleado.getPuesto());
-                stmt.setDouble(4, empleado.getSalario());
-                stmt.setInt(5, empleado.getId());
+                stmt.setString(3, empleado.getDni());
+                stmt.setString(4, empleado.getPuesto());
+                stmt.setDouble(5, empleado.getSalario());
+                stmt.setInt(6, empleado.getId());
 
                 int filasActualizadas = stmt.executeUpdate();
                 if (filasActualizadas > 0) {
@@ -99,7 +101,7 @@ public class EmpleadoDAO {
     public static Empleado obtenerEmpleadoPorId(int id) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            String query = "SELECT * FROM Empleado WHERE id = ?";
+            String query = "SELECT id, nombre, apellido, dni, puesto, salario FROM Empleado WHERE id = ?";
             try (PreparedStatement stmt = conexion.prepareStatement(query);) {
                 stmt.setInt(1, id);
                 try (ResultSet rs = stmt.executeQuery()) {
@@ -108,6 +110,7 @@ public class EmpleadoDAO {
                                 rs.getInt("id"),
                                 rs.getString("nombre"),
                                 rs.getString("apellido"),
+                                rs.getString("dni"),
                                 rs.getString("puesto"),
                                 rs.getDouble("salario")
                         );
@@ -120,4 +123,3 @@ public class EmpleadoDAO {
         return null;
     }
 }
-
