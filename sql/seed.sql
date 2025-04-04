@@ -26,6 +26,7 @@ CREATE TABLE  Empleado (
     id INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(45),
     apellido VARCHAR(45),
+    dni VARCHAR(20) UNIQUE
     puesto VARCHAR(45),
     salario DECIMAL(10,2)
 );
