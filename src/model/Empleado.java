@@ -11,23 +11,27 @@ public Empleado() {
 	
 }
 
-    public Empleado(String apellido, String dni, String nombre, String puesto, double salario) {
-        this.apellido = apellido;
-        this.dni = dni;
+    public Empleado(String nombre,String apellido, String dni, String puesto, double salario) {
         this.nombre = nombre;
+		this.apellido = apellido;
+        this.dni = dni;
         this.puesto = puesto;
         this.salario = salario;
     }
 
-    public Empleado(String apellido, String dni, int id, String nombre, String puesto, double salario) {
-        this.apellido = apellido;
-        this.dni = dni;
-        this.id = id;
+   
+    public Empleado(int id,String nombre,String apellido, String dni, String puesto, double salario) {
+		this.id=id;
         this.nombre = nombre;
+		this.apellido = apellido;
+        this.dni = dni;
         this.puesto = puesto;
         this.salario = salario;
     }
 
+  
+
+    
     public int getId() {
         return id;
     }

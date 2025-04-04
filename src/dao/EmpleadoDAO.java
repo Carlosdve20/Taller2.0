@@ -11,7 +11,7 @@ public class EmpleadoDAO {
     public static void agregarEmpleado(Empleado empleado) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            String query = "INSERT INTO Empleado (nombre, apellido, dni, puesto, salario) VALUES (?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Empleado (Nombre, apellido, dni, puesto, salario) VALUES (?, ?, ?, ?, ?)";
             try (PreparedStatement stmt = conexion.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
                 stmt.setString(1, empleado.getNombre());
                 stmt.setString(2, empleado.getApellido());
@@ -33,30 +33,30 @@ public class EmpleadoDAO {
         }
     }
 
-    // Método para obtener todos los empleados
-    public static List<Empleado> obtenerEmpleados() {
-        List<Empleado> listaEmpleados = new ArrayList<>();
-        Connection conexion = ConexionBD.conectar();
-        if (conexion != null) {
-            String query = "SELECT id, nombre, apellido, dni, puesto, salario FROM Empleado";
-            try (Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
-                while (rs.next()) {
-                    Empleado empleado = new Empleado(
-                            rs.getInt("id"),
-                            rs.getString("nombre"),
-                            rs.getString("apellido"),
-                            rs.getString("dni"),
-                            rs.getString("puesto"),
-                            rs.getDouble("salario")
-                    );
-                    listaEmpleados.add(empleado);
-                }
-            } catch (SQLException e) {
-                System.out.println("Error al obtener empleados: " + e.getMessage());
+   // Método para obtener todos los empleados
+public static List<Empleado> obtenerEmpleados() {
+    List<Empleado> listaEmpleados = new ArrayList<>();
+    Connection conexion = ConexionBD.conectar();
+    if (conexion != null) {
+        String query = "SELECT id, Nombre, apellido, dni, puesto, salario FROM Empleado";
+        try (Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                Empleado empleado = new Empleado(
+                        rs.getInt("id"),
+                        rs.getString("Nombre"),
+                        rs.getString("apellido"),
+                        rs.getString("dni"),
+                        rs.getString("puesto"),
+                        rs.getDouble("salario")
+                );
+                listaEmpleados.add(empleado);
             }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener empleados: " + e.getMessage());
         }
-        return listaEmpleados;
     }
+    return listaEmpleados;
+}
 
     // Método para actualizar un empleado
     public static void actualizarEmpleado(Empleado empleado) {
@@ -101,14 +101,14 @@ public class EmpleadoDAO {
     public static Empleado obtenerEmpleadoPorId(int id) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
-            String query = "SELECT id, nombre, apellido, dni, puesto, salario FROM Empleado WHERE id = ?";
+            String query = "SELECT id, Nombre, apellido, dni, puesto, salario FROM Empleado WHERE id = ?";
             try (PreparedStatement stmt = conexion.prepareStatement(query);) {
                 stmt.setInt(1, id);
                 try (ResultSet rs = stmt.executeQuery()) {
                     if (rs.next()) {
                         return new Empleado(
                                 rs.getInt("id"),
-                                rs.getString("nombre"),
+                                rs.getString("Nombre"),
                                 rs.getString("apellido"),
                                 rs.getString("dni"),
                                 rs.getString("puesto"),
