@@ -1,6 +1,7 @@
 package model;
 
 public class Empleado {
+private int id;
 private String nombre;
 private String apellido;
 private String dni;
@@ -18,6 +19,18 @@ public Empleado( String nombre, String apellido,String dni, String puesto, doubl
 	this.puesto = puesto;
 	this.salario = salario;
 }
+
+ public Empleado(String apellido, String dni, int id, String nombre, String puesto, double salario) {
+        this.apellido = apellido;
+        this.dni = dni;
+        this.id = id;
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.salario = salario;
+ }
+
+
+
 public String getdni() {
 	return dni;
 }
