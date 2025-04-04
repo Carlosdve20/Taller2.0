@@ -1,4 +1,4 @@
-package dao;
+/*package dao;
 
 
 import java.sql.*;
@@ -53,11 +53,11 @@ public class PedidoDAO{
                         Pedido pedido = new Pedido (
 
                             rs.getInt("id"), 
-                            rs.getString("producto"), 
-                            rs.getString("proveedor"), 
+                            InventarioDAO.obtenerInventarioPorId(rs.getInt("id_producto")),
+                            ProveedorDAO.obtenerProveedorPorId(rs.getInt("id_proveedor")), 
                             rs.getInt("cantidad"), 
                             rs.getDouble("precio"), 
-                            rs.getString("fecha_pedido")
+                            rs.getDate("fechaPedido").toLocalDate()
                         );
                         listaPedidos.add(pedido);
                     }
@@ -119,4 +119,4 @@ public class PedidoDAO{
                 
             }
         }
-    }
+    } */

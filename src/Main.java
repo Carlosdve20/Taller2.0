@@ -1,5 +1,4 @@
 
-import dao.PedidoDAO;
 import dao.ClienteDAO;
 import java.util.Scanner;
 import model.Cliente;
@@ -53,7 +52,7 @@ public class Main {
                     System.out.println("Saliendo del sistema...");
                     break;
 				case 7:
-                    registrarPedido(sc);
+                    
                     break;
 				case 8:
                     System.out.println("Saliendo del sistema...");
@@ -125,22 +124,22 @@ public class Main {
 	
 	private static void registrarReparacion(Scanner sc){
 		System.out.println("");
-	}
+	}/* 
 	private static void registrarPedido(Scanner sc) {
+		
+		System.out.println("Introduce nombre producto");
 		String producto=sc.nextLine();
-		System.out.println("Introduce producto");
-		String proveedor=sc.nextLine();
 		System.out.println("Introduce proveedor");
-		String cantidad=sc.nextLine();
+		String proveedor=sc.nextLine();
 		System.out.println("Introduce cantidad");
-		String precio=sc.nextLine();
-		System.out.println("Introduce la precio");
-		String fecha_pedido=sc.nextLine();
-		System.out.println("Introduce la fecha");  
+		int cantidad=sc.nextInt();
+		
+		System.out.println("Introduce la fecha"); 
+		String fecha_pedido=sc.nextLine(); 
 		   Pedido nuevoPedido = new Pedido(producto, proveedor, cantidad, precio,fecha_pedido);
 			        
-		        PedidoDAO.agregarPedido(nuevoPedido);
-	}        
+		        PedidoDAO.agregarPedido(nuevoPedido);*/
+	       
 
 }
 

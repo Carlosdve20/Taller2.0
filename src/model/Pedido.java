@@ -15,6 +15,15 @@ public class Pedido {
     }
 
     
+    public Pedido(Inventario producto, Proveedor proveedor, int cantidad, double precio, LocalDate fechaPedido) {
+        this.producto = producto;
+        this.proveedor = proveedor;
+        this.cantidad = cantidad;
+        this.precio = precio;
+        this.fechaPedido = fechaPedido;
+    }
+
+
     public Pedido(int id, Inventario producto, Proveedor proveedor, int cantidad, double precio, LocalDate fechaPedido) {
         this.id = id;
         this.producto = producto;
