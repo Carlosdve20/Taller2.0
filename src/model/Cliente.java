@@ -8,22 +8,22 @@ private String apellido;
 private String dni;
 private String telefono;
 private String correo;
-private String direccon;
+private String direccion;
 public Cliente() {
 	
 }
 
-public Cliente(String nombre, String apellido, String dni, String telefono, String correo, String direccon) {
+public Cliente(String nombre, String apellido, String dni, String telefono, String correo, String direccion) {
 	
 	this.nombre = nombre;
 	this.apellido = apellido;
 	this.dni = dni;
 	this.telefono = telefono;
 	this.correo = correo;
-	this.direccon = direccon;
+	this.direccion = direccion;
 }
 
-public Cliente(int id, String nombre, String apellido, String dni, String telefono, String correo, String direccon) {
+public Cliente(int id, String nombre, String apellido, String dni, String telefono, String correo, String direccion) {
 	
 	this.id = id;
 	this.nombre = nombre;
@@ -31,7 +31,7 @@ public Cliente(int id, String nombre, String apellido, String dni, String telefo
 	this.dni = dni;
 	this.telefono = telefono;
 	this.correo = correo;
-	this.direccon = direccon;
+	this.direccion = direccion;
 }
 public int getId() {
 	return id;
@@ -69,18 +69,18 @@ public String getCorreo() {
 public void setCorreo(String correo) {
 	this.correo = correo;
 }
-public String getDireccon() {
-	return direccon;
+public String getDireccion() {
+	return direccion;
 }
-public void setDireccon(String direccon) {
-	this.direccon = direccon;
+public void setDireccion(String direccion) {
+	this.direccion = direccion;
 }
 @Override
 public String toString() {
 	return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", telefono="
-			+ telefono + ", correo=" + correo + ", direccon=" + direccon + "]";
+			+ telefono + ", correo=" + correo + ", direccion=" + direccion + "]";
 }
 
-
+	
  
 }

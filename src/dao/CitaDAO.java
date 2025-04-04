@@ -92,4 +92,28 @@ public class CitaDAO {
             }
         }
     }
+    
+    public static Cita obtenerCitaPorId(int id) {
+        Connection conexion = ConexionBD.conectar();
+        Cita cita = null;
+        if (conexion != null) {
+            String query = "SELECT * FROM Cita WHERE id = ?";
+            try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+                stmt.setInt(1, id);
+                ResultSet rs = stmt.executeQuery();
+                if (rs.next()) {
+                    cita = new Cita(
+                        rs.getInt("id"),
+                        ClienteDAO.obtenerClientePorId(rs.getInt("id_cliente")),
+                        VehiculoDAO.obtenerVehiculoPorMatricula(rs.getString("matricula")),
+                        rs.getTimestamp("fecha").toLocalDateTime()
+                    );
+                }
+            } catch (SQLException e) {
+                System.out.println("Error al obtener cita por ID: " + e.getMessage());
+            }
+        }
+        return cita;
+    }
+    
 }

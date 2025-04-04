@@ -20,7 +20,7 @@ public class ClienteDAO {
                 stmt.setString(3, cliente.getDni());
                 stmt.setString(4, cliente.getTelefono());
                 stmt.setString(5, cliente.getCorreo());
-                stmt.setString(6, cliente.getDireccon());
+                stmt.setString(6, cliente.getDireccion());
                 
                 int filasInsertadas = stmt.executeUpdate();
                 if (filasInsertadas > 0) {
@@ -73,7 +73,7 @@ public class ClienteDAO {
                 stmt.setString(3, cliente.getDni());
                 stmt.setString(4, cliente.getTelefono());
                 stmt.setString(5, cliente.getCorreo());
-                stmt.setString(6, cliente.getDireccon());
+                stmt.setString(6, cliente.getDireccion());
                 stmt.setInt(7, cliente.getId());
 
                 int filasActualizadas = stmt.executeUpdate();
