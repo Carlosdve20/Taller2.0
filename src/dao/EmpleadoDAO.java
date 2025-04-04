@@ -44,6 +44,7 @@ public class EmpleadoDAO {
                             rs.getInt("id"),
                             rs.getString("nombre"),
                             rs.getString("apellido"),
+                            
                             rs.getString("puesto"),
                             rs.getDouble("salario")
                     );

@@ -1,19 +1,20 @@
 package model;
 
 public class Empleado {
-private String dni;
 private String nombre;
 private String apellido;
+private String dni;
 private String puesto;
 private double salario;
 public Empleado() {
 	
 }
-public Empleado(String dni, String nombre, String apellido, String puesto, double salario) {
+public Empleado( String nombre, String apellido,String dni, String puesto, double salario) {
 	
-	this.dni = dni;
+	
 	this.nombre = nombre;
 	this.apellido = apellido;
+	this.dni = dni;
 	this.puesto = puesto;
 	this.salario = salario;
 }
