@@ -1,7 +1,7 @@
 package model;
 
 public class Empleado {
-private int id;
+private String dni;
 private String nombre;
 private String apellido;
 private String puesto;
@@ -9,19 +9,19 @@ private double salario;
 public Empleado() {
 	
 }
-public Empleado(int id, String nombre, String apellido, String puesto, double salario) {
+public Empleado(String dni, String nombre, String apellido, String puesto, double salario) {
 	
-	this.id = id;
+	this.dni = dni;
 	this.nombre = nombre;
 	this.apellido = apellido;
 	this.puesto = puesto;
 	this.salario = salario;
 }
-public int getId() {
-	return id;
+public String getdni() {
+	return dni;
 }
-public void setId(int id) {
-	this.id = id;
+public void setdni(String dni) {
+	this.dni = dni;
 }
 public String getNombre() {
 	return nombre;
@@ -49,7 +49,7 @@ public void setSalario(double salario) {
 }
 @Override
 public String toString() {
-	return "Empleado [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", puesto=" + puesto + ", salario="
+	return "Empleado [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", puesto=" + puesto + ", salario="
 			+ salario + "]";
 }
 

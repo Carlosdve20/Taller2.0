@@ -73,19 +73,25 @@
                             case 14 -> System.out.println("Saliendo del sistema...");
                             default -> System.out.println(" Opción no válida.");
                         }   } while (opcion != 14);
-                    /*// Obtener y mostrar todos los clientes
-                    System.out.println("Lista de clientes:");
-                    for (Cliente cliente : ClienteDAO.obtenerClientes()) {
-                    System.out.println(cliente);
-                    }
-                    // Actualizar cliente
-                    nuevoCliente.setTelefono("600987654");
-                    ClienteDAO.actualizarCliente(nuevoCliente);
-                    // Eliminar cliente (descomentar para probar)
-                    ClienteDAO.eliminarCliente(nuevoCliente.getId());*/
+                   
 
                 }
             
+                /* 
+                    private static void registrarPedido(Scanner sc) {
+                        
+                        System.out.println("Introduce nombre producto");
+                        String producto=sc.nextLine();
+                        System.out.println("Introduce proveedor");
+                        String proveedor=sc.nextLine();
+                        System.out.println("Introduce cantidad");
+                        int cantidad=sc.nextInt();
+                        
+                        System.out.println("Introduce la fecha"); 
+                        String fecha_pedido=sc.nextLine(); 
+                        Pedido nuevoPedido = new Pedido(producto, proveedor, cantidad, precio,fecha_pedido);
+                                    
+                                PedidoDAO.agregarPedido(nuevoPedido);*/
 
             private static void gestionarClientes(Scanner sc) {
                 System.out.println("Gestión de Clientes:");
@@ -97,21 +103,6 @@
                 int opcion = sc.nextInt();
                 sc.nextLine();
         
-    /* 
-        private static void registrarPedido(Scanner sc) {
-            
-            System.out.println("Introduce nombre producto");
-            String producto=sc.nextLine();
-            System.out.println("Introduce proveedor");
-            String proveedor=sc.nextLine();
-            System.out.println("Introduce cantidad");
-            int cantidad=sc.nextInt();
-            
-            System.out.println("Introduce la fecha"); 
-            String fecha_pedido=sc.nextLine(); 
-            Pedido nuevoPedido = new Pedido(producto, proveedor, cantidad, precio,fecha_pedido);
-                        
-                    PedidoDAO.agregarPedido(nuevoPedido);*/
             
 
             switch (opcion) {
@@ -133,7 +124,7 @@
                                 System.out.println("Cliente registrado correctamente.");
                 }
                 case 2 -> {
-                                System.out.println("Introduce ID del cliente a modificar:");
+                                System.out.println("Introduce Nº socio:(ID) del cliente a modificar:");
                                 int idModificar = sc.nextInt();
                                 sc.nextLine();
                                 
@@ -162,14 +153,14 @@
 				
 			
 			case 3 -> {
-                    System.out.println("Introduce ID del cliente a eliminar:");
+                    System.out.println("Introduce Nº socio:(ID) del cliente a eliminar:");
                     int idEliminar = sc.nextInt();
                     sc.nextLine();
                     ClienteDAO.eliminarCliente(idEliminar);
                     System.out.println("Cliente eliminado correctamente.");
                 }
 			case 4 -> {
-                    System.out.println("Introduce ID del cliente a revisar:");
+                    System.out.println("Introduce Nº socio:(ID) del cliente a revisar:");
                     int idRevisar = sc.nextInt();
                     sc.nextLine();
                      Cliente clienteRevisado = ClienteDAO.obtenerClientePorId(idRevisar);
