@@ -91,4 +91,28 @@ public class ServicioDAO {
             }
         }
     }
+     // Método para obtener un servicio por su ID
+     public static Servicio obtenerServicioPorId(int id) {
+        Servicio servicio = null;
+        Connection conexion = ConexionBD.conectar();
+        if (conexion != null) {
+            String query = "SELECT id, nombre, descripcion, precio FROM Servicio WHERE id = ?";
+            try (PreparedStatement stmt = conexion.prepareStatement(query);) {
+                stmt.setInt(1, id);
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next()) {
+                        servicio = new Servicio(
+                                rs.getInt("id"),
+                                rs.getString("nombre"),
+                                rs.getString("descripcion"),
+                                rs.getDouble("precio")
+                        );
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println("Error al obtener servicio por ID: " + e.getMessage());
+            } 
+        }
+        return servicio;
+    }
 }

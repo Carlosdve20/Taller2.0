@@ -1,7 +1,12 @@
 import java.util.Scanner;
+
 import view.Citaview;
 import view.Clienteview;
+import view.Empleadoview;
 import view.Inventarioview;
+import view.Reparacionview;
+import view.ServicioReparacion;
+import view.Servicioview;
 import view.Vehiculoview;
 
 public class Main {
@@ -18,9 +23,10 @@ public class Main {
             System.out.println("4. Registrar empleado");
             System.out.println("5. Gestionar Inventario");
             System.out.println("6. Registrar proveedor");
-            System.out.println("7. Gestionar citas");
-            System.out.println("8. Crear Pedido");
-            System.out.println("9. Salir");
+            System.out.println("7. Gestionar Servicios");
+            System.out.println("8. Gestionar citas");
+            System.out.println("9. Crear Pedido");
+            System.out.println("10. Salir");
             System.out.print("Seleccione una opción: ");
 
             opcion = sc.nextInt();
@@ -32,9 +38,9 @@ public class Main {
 
                 case 2 -> Vehiculoview.gestionarVehiculos(sc);
 
-                case 3 -> System.out.println("Registrar Reparación");
+                case 3 -> Reparacionview.gestionarReparaciones(sc);
 
-                case 4 -> System.out.println("Registrando empleado...");
+                case 4 -> Empleadoview.gestionarEmpleados(sc);
 
                 case 5 -> {
                     Inventarioview.gestionarInventario(sc);
@@ -42,15 +48,17 @@ public class Main {
                 }
 
                 case 6 -> System.out.println("Registrar proveedor");
+                case 7 -> Servicioview.gestionarServicios(sc);
+            
 
-                case 7 -> {
+                case 8 -> {
                     Citaview.gestionarCitas(sc);
                     System.out.println("Citas gestionadas.");
                 }
 
-                case 8 -> System.out.println("Funcionalidad en desarrollo: Crear Pedido");
+                case 9 -> System.out.println("Funcionalidad en desarrollo: Crear Pedido");
 
-                case 9 -> {
+                case 10 -> {
                     System.out.println("Saliendo del sistema...");
                     System.exit(0); 
                 }
@@ -58,7 +66,7 @@ public class Main {
                 default -> System.out.println("Opción no válida.");
             }
 
-        } while (opcion != 9); 
+        } while (opcion != 10); 
     }
 }
 

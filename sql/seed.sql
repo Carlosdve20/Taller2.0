@@ -28,7 +28,8 @@ CREATE TABLE  Empleado (
     apellido VARCHAR(45),
     dni VARCHAR(20) UNIQUE,
     puesto VARCHAR(45),
-    salario DECIMAL(10,2)
+    salario DECIMAL(10,2),
+    disponibilidad BOOLEAN DEFAULT TRUE
 );
 
 -- Crear la tabla Inventario

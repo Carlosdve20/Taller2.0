@@ -6,8 +6,15 @@ private String nombre;
 private String descripción;
 private double precio;
 public Servicio() {
-	super();
+	
 }
+
+public Servicio(String nombre, String descripción, double precio) {
+	this.nombre = nombre;
+	this.descripción = descripción;
+	this.precio = precio;
+}
+
 public Servicio(int id, String nombre, String descripción, double precio) {
 	super();
 	this.id = id;

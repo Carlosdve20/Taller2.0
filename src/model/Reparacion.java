@@ -12,9 +12,22 @@ private LocalDate fechaEntrada;
 private LocalDate fechaSalida;
 private List<Servicio>servicios;
 private double preciototal;
+
 public Reparacion() {
 	
 }
+
+public Reparacion(Cliente cliente, Vehiculo vehiculo, Empleado empleado, LocalDate fechaEntrada, LocalDate fechaSalida,
+		List<Servicio> servicios, double preciototal) {
+	this.cliente = cliente;
+	this.vehiculo = vehiculo;
+	this.empleado = empleado;
+	this.fechaEntrada = fechaEntrada;
+	this.fechaSalida = fechaSalida;
+	this.servicios = servicios;
+	this.preciototal = preciototal;
+}
+
 public Reparacion(int id, Cliente cliente, Vehiculo vehiculo, Empleado empleado, LocalDate fechaEntrada,
 		LocalDate fechaSalida, List<Servicio> servicios, double preciototal) {
 	
