@@ -5,18 +5,17 @@ import dao.EmpleadoDAO;
 import dao.ReparacionDAO;
 import dao.ServicioDAO;
 import dao.VehiculoDAO;
-import model.Cliente;
-import model.Empleado;
-import model.Reparacion;
-import model.Servicio;
-import model.Vehiculo;
-import view.ServicioReparacion; 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import model.Cliente;
+import model.Empleado;
+import model.Reparacion;
+import model.Servicio;
+import model.Vehiculo;
 
 public class Reparacionview {
 
@@ -39,7 +38,7 @@ public class Reparacionview {
             System.out.println("10. Volver al menú principal");
             System.out.print("Seleccione una opción: ");
             opcion = sc.nextInt();
-            sc.nextLine(); // Consumir la nueva línea
+            sc.nextLine(); 
 
             switch (opcion) {
                 case 1 -> registrarNuevaReparacion(sc);

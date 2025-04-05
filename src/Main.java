@@ -1,14 +1,12 @@
 import java.util.Scanner;
-
 import view.Citaview;
 import view.Clienteview;
 import view.Empleadoview;
 import view.Inventarioview;
+import view.Proveedorview;
 import view.Reparacionview;
-import view.ServicioReparacion;
 import view.Servicioview;
 import view.Vehiculoview;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -42,21 +40,15 @@ public class Main {
 
                 case 4 -> Empleadoview.gestionarEmpleados(sc);
 
-                case 5 -> {
-                    Inventarioview.gestionarInventario(sc);
-                    System.out.println("Inventario gestionado.");
-                }
+                case 5 -> Inventarioview.gestionarInventario(sc);
 
-                case 6 -> System.out.println("Registrar proveedor");
+                case 6 -> Proveedorview.gestionarProveedores(sc);
+
                 case 7 -> Servicioview.gestionarServicios(sc);
             
+                case 8 -> Citaview.gestionarCitas(sc);
 
-                case 8 -> {
-                    Citaview.gestionarCitas(sc);
-                    System.out.println("Citas gestionadas.");
-                }
-
-                case 9 -> System.out.println("Funcionalidad en desarrollo: Crear Pedido");
+                case 9 -> System.out.println("Gestionar Pedido");
 
                 case 10 -> {
                     System.out.println("Saliendo del sistema...");

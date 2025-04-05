@@ -21,16 +21,14 @@ public class Citaview {
             System.out.println("2. Ver Citas");
             System.out.println("3. Actualizar Cita");
             System.out.println("4. Eliminar Cita");
-
             System.out.println("5. Volver al menú principal");
-
             System.out.print("Seleccione una opción: ");
             int opcion = sc.nextInt();
             sc.nextLine();
 
             switch (opcion) {
                 case 1 -> {
-                    System.out.println("Introduce ID del cliente:");
+                    System.out.println("Introduce Nº de socio(ID) del cliente:");
                     int idCliente = sc.nextInt();
                     sc.nextLine();
                     Cliente cliente = ClienteDAO.obtenerClientePorId(idCliente);

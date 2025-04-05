@@ -21,7 +21,7 @@ public class ProveedorDAO {
                 if (filasInsertadas > 0) {
                     ResultSet generatedKeys = stmt.getGeneratedKeys();
                     if (generatedKeys.next()) {
-                        proveedor.setId(generatedKeys.getInt(1));
+                        proveedor.setId(generatedKeys.getInt(1));  // Asignando el ID generado
                     }
                     System.out.println("Proveedor agregado con éxito. ID asignado: " + proveedor.getId());
                 }
@@ -40,10 +40,9 @@ public class ProveedorDAO {
             try (Statement stmt = conexion.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
                 while (rs.next()) {
                     Proveedor proveedor = new Proveedor(
-                            rs.getInt("id"),
-                            rs.getString("nombre"),
-                            rs.getString("telefono"),
-                            rs.getString("direccion")
+                                                rs.getString("nombre"),
+                        rs.getString("telefono"),
+                        rs.getString("direccion")
                     );
                     listaProveedores.add(proveedor);
                 }
@@ -75,7 +74,7 @@ public class ProveedorDAO {
         }
     }
 
-    // Método para eliminar un proveedor
+    // Método para eliminar proveedor por ID
     public static void eliminarProveedor(int id) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
@@ -92,19 +91,19 @@ public class ProveedorDAO {
         }
     }
 
+    // Obtener proveedor por ID
     public static Proveedor obtenerProveedorPorId(int id) {
         Connection conexion = ConexionBD.conectar();
         if (conexion != null) {
             String query = "SELECT * FROM Proveedor WHERE id = ?";
-            try (PreparedStatement stmt = conexion.prepareStatement(query);) {
+            try (PreparedStatement stmt = conexion.prepareStatement(query)) {
                 stmt.setInt(1, id);
                 try (ResultSet rs = stmt.executeQuery()) {
                     if (rs.next()) {
                         return new Proveedor(
-                                rs.getInt("id"),
-                                rs.getString("nombre"),
-                                rs.getString("telefono"),
-                                rs.getString("direccion")
+                                                        rs.getString("nombre"),
+                            rs.getString("telefono"),
+                            rs.getString("direccion")
                         );
                     }
                 }
@@ -114,5 +113,29 @@ public class ProveedorDAO {
         }
         return null;
     }
-}
 
+    // Buscar proveedores por nombre
+    public static List<Proveedor> buscarProveedorPorNombre(String nombre) {
+        List<Proveedor> lista = new ArrayList<>();
+        Connection conexion = ConexionBD.conectar();
+        if (conexion != null) {
+            String query = "SELECT * FROM Proveedor WHERE nombre LIKE ?";
+            try (PreparedStatement stmt = conexion.prepareStatement(query)) {
+                stmt.setString(1, "%" + nombre + "%");
+                try (ResultSet rs = stmt.executeQuery()) {
+                    while (rs.next()) {
+                        Proveedor proveedor = new Proveedor(
+                                                        rs.getString("nombre"),
+                            rs.getString("telefono"),
+                            rs.getString("direccion")
+                        );
+                        lista.add(proveedor);
+                    }
+                }
+            } catch (SQLException e) {
+                System.out.println("Error al buscar proveedor: " + e.getMessage());
+            }
+        }
+        return lista;
+    }
+}
