@@ -1,5 +1,6 @@
 package view;
 
+
 import dao.CitaDAO;
 import dao.ClienteDAO;
 import dao.VehiculoDAO;
@@ -13,12 +14,16 @@ import model.Vehiculo;
 public class Citaview {
     
       public static void gestionarCitas(Scanner sc) {
+
+
             System.out.println("Gestión de Citas:");
             System.out.println("1. Agregar Cita");
             System.out.println("2. Ver Citas");
             System.out.println("3. Actualizar Cita");
             System.out.println("4. Eliminar Cita");
+
             System.out.println("5. Volver al menú principal");
+
             System.out.print("Seleccione una opción: ");
             int opcion = sc.nextInt();
             sc.nextLine();
@@ -67,6 +72,7 @@ public class Citaview {
                     CitaDAO.eliminarCita(idEliminar);
                     System.out.println("Cita eliminada correctamente.");
                     }
+
                     
                 case 5 -> {System.out.println("Volviendo al menú principal...");
                 }
@@ -75,4 +81,5 @@ public class Citaview {
             
         }
     }
+
 

@@ -7,7 +7,6 @@ import view.Vehiculoview;
 public class Main {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int opcion;
 
@@ -27,13 +26,13 @@ public class Main {
             opcion = sc.nextInt();
             sc.nextLine(); // Limpiar buffer
 
+            // Menú con opciones
             switch (opcion) {
-
                 case 1 -> Clienteview.gestionarClientes(sc);
 
                 case 2 -> Vehiculoview.gestionarVehiculos(sc);
 
-                case 3 -> System.out.println("Funcionalidad en desarrollo: Registrar Reparación");
+                case 3 -> System.out.println("Registrar Reparación");
 
                 case 4 -> System.out.println("Registrando empleado...");
 
@@ -42,7 +41,7 @@ public class Main {
                     System.out.println("Inventario gestionado.");
                 }
 
-                case 6 -> System.out.println("Funcionalidad en desarrollo: Registrar proveedor");
+                case 6 -> System.out.println("Registrar proveedor");
 
                 case 7 -> {
                     Citaview.gestionarCitas(sc);
@@ -90,6 +89,8 @@ public class Main {
 
 
 
+
       
+
 
 

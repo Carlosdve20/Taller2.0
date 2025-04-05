@@ -2,13 +2,6 @@
 .metadata
 bin/
 *.class
-tmp/
-*.tmp
-*.log
-*.bak
-*.swp
-*~
 .project
 .settings/
 .classpath
-.vscode/

@@ -1,5 +1,6 @@
 package view;
 
+
 import dao.InventarioDAO;
 import java.util.List;
 import java.util.Scanner;
@@ -8,12 +9,15 @@ import model.Inventario;
 public class Inventarioview {
     
     	public static void gestionarInventario(Scanner sc) {
+
         System.out.println("Gestión de Inventario:");
         System.out.println("1. Registrar nuevo producto");
         System.out.println("2. Modificar producto");
         System.out.println("3. ver inventario");
         System.out.println("4. Eliminar producto");
+
         System.out.println("5. Volver al menú principal");
+
         System.out.print("Seleccione una opción: ");
         int opcion = sc.nextInt();
         sc.nextLine();
@@ -56,7 +60,7 @@ public class Inventarioview {
                 InventarioDAO.eliminarInventario(idEliminar);
                 System.out.println("Producto eliminado correctamente.");
                 }
-                
+   
             case 5 -> {System.out.println("Volviendo al menú principal...");
                 
             }
@@ -64,5 +68,6 @@ public class Inventarioview {
         }
     }
     
+
 }
 

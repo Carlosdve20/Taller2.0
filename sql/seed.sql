@@ -26,7 +26,7 @@ CREATE TABLE  Empleado (
     id INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(45),
     apellido VARCHAR(45),
-    dni VARCHAR(20) UNIQUE
+    dni VARCHAR(20) UNIQUE,
     puesto VARCHAR(45),
     salario DECIMAL(10,2)
 );
@@ -35,7 +35,7 @@ CREATE TABLE  Empleado (
 CREATE TABLE Inventario (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(45),
-    cantidad INT(11),
+    cantidad INT,
     precio DECIMAL(10,2)
 );
 
@@ -92,9 +92,9 @@ CREATE TABLE  Reparacion_Servicio (
 
 -- Crear la tabla Cita
 CREATE TABLE  Cita (
-    id INTPRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     cliente_id INT ,
-    matricula VARCHAR,
+    matricula VARCHAR(15),
     fecha DATETIME NOT NULL,
     FOREIGN KEY (cliente_id) REFERENCES Cliente(id),
     FOREIGN KEY (matricula) REFERENCES Vehiculo(matricula)
