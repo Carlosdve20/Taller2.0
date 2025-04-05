@@ -50,4 +50,8 @@ public class Inventario {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+    @Override
+public String toString() {
+	return "Inventario [id=" + id + ", nombre=" + nombre + ", cantidad=" + cantidad + ", precio=" + precio + "]";
+}
 }

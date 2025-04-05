@@ -105,4 +105,8 @@ public class VehiculoDAO {
         }
         return null;
     }
+
+    public static Vehiculo obtenerVehiculoPorMatricula(int matricula) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
