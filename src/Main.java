@@ -28,20 +28,14 @@
             
                     do {
                         System.out.println("Gestión de Taller, elige lo que necesitas: ");
-                        System.out.println("1. Registrar un cliente");
-                        System.out.println("2. Registrar una Reparacion");
-                        System.out.println("3. Registrar empleado");
-                        System.out.println("4. Revisar inventario");
-                        System.out.println("5. Registrar proveedor");
+                        System.out.println("1. Gestionar un cliente");
+                        System.out.println("2. Gestionar una Reparacion");
+                        System.out.println("3. Gestionar empleado");
+                        System.out.println("4. Gestionar inventario");
+                        System.out.println("5. Gestionar proveedor");
                         System.out.println("6. Gestionar citas");
-                        System.out.println("7. Crear Pedido");
-                        System.out.println("8. Modificar o borrar cliente");
-                        System.out.println("9 .Modificar o borrar Reparacion");
-                        System.out.println("10 .Modificar o borrar empleado");
-                        System.out.println("11 .Modificar o borrar proveedor");
-                        System.out.println("12 .Modificar o borrar servicio");
-                        System.out.println("13 .Modificar o borrar pedido");
-                        System.out.println("14 .Salir");
+                        System.out.println("7. Gestionar Pedido");
+                        System.out.println("8 .Salir");
                         System.out.print("Seleccione una opción: ");
                         opcion = sc.nextInt();
                         sc.nextLine(); // Limpiar buffer
@@ -59,22 +53,13 @@
                                 
                             case 5 ->{}
                         
-                            case 6 -> {
-                                Citaview.gestionarCitas(sc);
-                                System.out.println("Gestionar citas...");
-                            }
-                                
-                            case 7 -> {
+                            case 6 -> Citaview.gestionarCitas(sc);
+                             case 7 -> {
                             }
                             case 8 -> System.out.println("Saliendo del sistema...");
-                            case 9 -> System.out.println("Saliendo del sistema...");
-                            case 10 -> System.out.println("Saliendo del sistema...");
-                            case 11 -> System.out.println("Saliendo del sistema...");
-                            case 12 -> System.out.println("Saliendo del sistema...");
-                            case 13 -> System.out.println("Saliendo del sistema...");
-                            case 14 -> System.out.println("Saliendo del sistema...");
+                          
                             default -> System.out.println(" Opción no válida.");
-                        }   } while (opcion != 14);
+                        }   } while (opcion != 8);
                    
 
                 }
