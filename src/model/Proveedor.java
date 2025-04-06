@@ -6,7 +6,7 @@ public class Proveedor {
     private String telefono;
     private String direccion;
 
-    // Constructor con 4 parámetros (incluyendo id)
+    
     public Proveedor(int id, String nombre, String telefono, String direccion) {
         this.id = id;
         this.nombre = nombre;
@@ -14,14 +14,25 @@ public class Proveedor {
         this.direccion = direccion;
     }
 
-    // Constructor con 3 parámetros (sin id)
+    
     public Proveedor(String nombre, String telefono, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.id = 0;  
     }
 
-    // Getters y setters
+    public Proveedor() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public Proveedor(int idProveedor) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+   
+
+    
     public int getId() {
         return id;
     }
@@ -56,7 +67,6 @@ public class Proveedor {
 
     @Override
     public String toString() {
-        return "Proveedor{id=" + id + ", nombre='" + nombre + "', telefono='" + telefono + "', direccion='" + direccion + "'}";
+        return "Proveedor [id=" + id + ", nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + "]";
     }
 }
-

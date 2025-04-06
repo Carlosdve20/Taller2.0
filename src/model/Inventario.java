@@ -18,6 +18,10 @@ public class Inventario {
         this.precio = precio;
     }
 
+    public Inventario(int idProducto) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     // Getters y Setters
     public int getId() {
         return id;
