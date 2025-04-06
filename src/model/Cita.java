@@ -10,6 +10,13 @@ private LocalDateTime fecha;
 public Cita() {
 	
 }
+
+public Cita(Cliente cliente, Vehiculo vehiculo, LocalDateTime fecha) {
+	this.cliente = cliente;
+	this.vehiculo = vehiculo;
+	this.fecha = fecha;
+}
+
 public Cita(int id, Cliente cliente, Vehiculo vehiculo, LocalDateTime fecha) {
 	
 	this.id = id;

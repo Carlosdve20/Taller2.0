@@ -23,11 +23,7 @@ public Empleado() {
     this.disponibilidad = disponibilidad;
 }
 
-
-
-  
-
-    public Empleado(int id, String nombre, String apellido, String dni, String puesto, double salario,
+  public Empleado(int id, String nombre, String apellido, String dni, String puesto, double salario,
             boolean disponibilidad) {
         this.id = id;
         this.nombre = nombre;

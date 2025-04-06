@@ -9,6 +9,16 @@ public class Inventario {
     // Constructor vacío (opcional, pero recomendable)
     public Inventario() {
     }
+    
+
+
+    public Inventario(String nombre, int cantidad, double precio) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.precio = precio;
+    }
+
+
 
     // Constructor con todos los parámetros
     public Inventario(int id, String nombre, int cantidad, double precio) {
