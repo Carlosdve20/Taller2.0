@@ -34,10 +34,7 @@ public class Empleadoview {
                 System.out.println("Introduce salario:");
                 double salario = sc.nextDouble();
                 sc.nextLine(); // Consumir la nueva línea
-                System.out.println("¿Está disponible? (true/false):");
-                boolean disponibilidad = sc.nextBoolean();
-                sc.nextLine(); // Consumir la nueva línea
-                Empleado nuevoEmpleado = new Empleado(nombre, apellido, dni, puesto, salario, disponibilidad);
+                Empleado nuevoEmpleado = new Empleado(nombre, apellido, dni, puesto, salario, true);
                 EmpleadoDAO.agregarEmpleado(nuevoEmpleado);
                 System.out.println("Empleado registrado correctamente.");
             }

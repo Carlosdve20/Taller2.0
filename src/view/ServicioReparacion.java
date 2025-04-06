@@ -103,6 +103,10 @@ public class ServicioReparacion {
         reparacion.setEmpleado(empleado);
         ReparacionDAO.actualizarReparacion(reparacion);
         System.out.println("Empleado con ID " + idEmpleado + " asignado a la reparación con ID " + idReparacion + ".");
+
+        empleado.setDisponibilidad(false);
+        EmpleadoDAO.actualizarEmpleado(empleado);
+        System.out.println("Disponibilidad del empleado " + empleado.getNombre() + " " + empleado.getApellido() + " establecida a false.");
     }
 
     // Método para agregar un servicio a una reparación existente
@@ -161,6 +165,14 @@ public class ServicioReparacion {
         reparacion.setFechaSalida(LocalDate.now());
         ReparacionDAO.actualizarReparacion(reparacion);
         System.out.println("Reparación con ID " + idReparacion + " marcada como finalizada.");
+
+         // Obtener el empleado asignado y actualizar su disponibilidad a true
+         Empleado empleadoAsignado = EmpleadoDAO.obtenerEmpleadoPorId(reparacion.getEmpleado().getId());
+         if (empleadoAsignado != null) {
+             empleadoAsignado.setDisponibilidad(true);
+             EmpleadoDAO.actualizarEmpleado(empleadoAsignado);
+             System.out.println("Disponibilidad del empleado " + empleadoAsignado.getNombre() + " " + empleadoAsignado.getApellido() + " establecida a true.");
+         }
     }
 
 }
